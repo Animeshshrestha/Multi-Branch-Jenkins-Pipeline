@@ -3,13 +3,10 @@ pipeline {
 
     stages {
 
-        stage('Code Checkout') {
+        stage('Build') {
             steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/Animeshshrestha/Multi-Branch-Jenkins-Pipeline.git']]
-                ])
+                // Build steps go here
+                echo 'Building...'
             }
         }
 
