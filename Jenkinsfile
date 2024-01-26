@@ -6,6 +6,7 @@ pipeline {
             steps {
                 // Build steps go here
                 echo 'Building...'
+                checkout scm
             }
         }
 
