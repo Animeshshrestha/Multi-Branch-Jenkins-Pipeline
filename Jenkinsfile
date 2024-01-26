@@ -2,11 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Code Checkout') {
             steps {
-                // Build steps go here
-                echo 'Building...'
-                checkout scm
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[url: 'https://github.com/Animeshshrestha/Multi-Branch-Jenkins-Pipeline.git']]
+                ])
             }
         }
 
